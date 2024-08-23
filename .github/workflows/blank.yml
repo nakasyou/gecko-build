@@ -12,10 +12,13 @@ jobs:
         uses: actions/checkout@v4
       - name: clone gecko
         run: git clone https://github.com/mozilla/gecko-dev --depth=1
-      - name: Build
+
+      - name: Install Firefox build dependencies
         run: |
-          mkdir firefox
-          cd firefox/
-          wget -q https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py -O bootstrap.py
-          python bootstrap.py
-      
+          python -m pip install -r ./mach/env/requirements.txt
+          ./mach bootstrap --no-interactive --application-choice=browser
+
+      - name: Build Firefox
+        run: |
+          cd gecko-dev
+          ./mach build
