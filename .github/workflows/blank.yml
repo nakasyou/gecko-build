@@ -15,6 +15,7 @@ jobs:
 
       - name: Bootstrap
         run: |
+          New-Item "../mozilla-source" -ItemType Directory
           cd ../mozilla-source
 
           Invoke-WebRequest https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py -OutFile bootstrap.py
