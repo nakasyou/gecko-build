@@ -19,6 +19,6 @@ jobs:
           cd ../mozilla-source
 
           Invoke-WebRequest https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py -OutFile bootstrap.py
-          python3 bootstrap.py --no-interactive
+          python3 bootstrap.py --no-interactive --application-choice browser
 
           cd ../gecko-dev
