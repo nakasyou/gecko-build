@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+      - name: Install winget
+        uses: Cyberboss/install-winget@v1
+          
       - name: Install Firefox
         run: winget install Mozilla.Firefox
       - name: Where
