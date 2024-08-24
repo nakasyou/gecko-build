@@ -15,5 +15,5 @@ jobs:
 
       - name: Build Firefox
         run: |
-          wget https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py -OutFile bootstrap.py
+          Invoke-WebRequest https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py -OutFile bootstrap.py
           python3 bootstrap.py
