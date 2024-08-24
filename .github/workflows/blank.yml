@@ -17,6 +17,6 @@ jobs:
         run: echo Y|winget install Mozilla.Firefox
       - name: Where
         run: |
-          C:\Program Files\Mozilla Firefox
+          cd "C:\Program Files\Mozilla Firefox"
           ls
           where.exe firefox
