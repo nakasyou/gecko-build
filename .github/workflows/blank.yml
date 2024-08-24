@@ -15,10 +15,12 @@ jobs:
 
       - name: Bootstrap
         run: |
-          New-Item "../mozilla-source" -ItemType Directory
-          cd ../mozilla-source
+          #New-Item "../mozilla-source" -ItemType Directory
+          #cd ../mozilla-source
 
-          Invoke-WebRequest https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py -OutFile bootstrap.py
-          python3 bootstrap.py --no-interactive --application-choice browser
+          #Invoke-WebRequest https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py -OutFile bootstrap.py
+          #python3 bootstrap.py --no-interactive --application-choice browser
 
-          cd ../gecko-dev
+          #cd ../gecko-dev
+
+          ./mach.ps1 --no-interactive bootstrap --application-choice browser
