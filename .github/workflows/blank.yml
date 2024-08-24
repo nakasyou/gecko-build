@@ -14,6 +14,6 @@ jobs:
         uses: Cyberboss/install-winget@v1
           
       - name: Install Firefox
-        run: winget install Mozilla.Firefox
+        run: echo Y|winget install Mozilla.Firefox
       - name: Where
         run: where.exe firefox
